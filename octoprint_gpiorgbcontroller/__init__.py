@@ -26,7 +26,7 @@ class GpiorgbcontrollerPlugin(octoprint.plugin.StartupPlugin,
 	def init_rgb(self, red_pin, grn_pin, blu_pin):
 		try:
 			self.deinit_rgb()
-			self.led = RGBLED(red=red_pin, green=grn_pin, blue=blu_pin, active_high=True, pin_factory=self.pin_factory)
+			self.led = RGBLED(red=red_pin, green=grn_pin, blue=blu_pin, active_high=False, pin_factory=self.pin_factory)
 			self._logger.info("LEDs initialized with pin factory: " + str(self.led.pin_factory))
 		except:
 			self._logger.error("Error occurred while initializing LEDs")
